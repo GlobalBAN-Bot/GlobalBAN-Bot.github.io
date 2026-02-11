@@ -1,1 +1,0 @@
-# GlobalBAN-Bot.github.io
