@@ -1,0 +1,6 @@
+<script>
+const guilds=JSON.parse(localStorage.guilds||"[]");
+guilds.forEach(g=>{
+ document.body.innerHTML+=`<div>${g.name} <input type="checkbox" checked></div>`;
+});
+</script>
