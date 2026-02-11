@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>GlobalBAN Network</title>
+<link rel="stylesheet" href="style.css">
+<script src="i18n.js"></script>
+</head>
+<body>
+<h1><script>document.write(t("title"))</script></h1>
+
+<select onchange="localStorage.lang=this.value;location.reload()">
+  <option value="ja">日本語</option>
+  <option value="en">English</option>
+</select>
+
+<p>同意したサーバー間のみでBAN共有を行うモデレーション支援BOT</p>
+
+<div class="box">
+  <p>
+    <a href="/tos">利用規約</a> |
+    <a href="/privacy">プライバシーポリシー</a>
+  </p>
+
+  <label>
+    <input type="checkbox" id="agree">
+    規約に同意します
+  </label><br><br>
+
+  <button onclick="invite()">
+    <script>document.write(t("invite"))</script>
+  </button>
+</div>
+
+<script>
+function invite(){
+  if(!agree.checked){
+    alert("同意が必要です");
+    return;
+  }
+  location.href =
+    "https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot%20applications.commands&permissions=4";
+}
+</script>
+</body>
+</html>
